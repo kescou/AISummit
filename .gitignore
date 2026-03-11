@@ -5,11 +5,11 @@
 !*/
 
 # Keep this file
-!.gitignore
+!/.gitignore
 
 # Only publish the new presentation app assets
-!New/app/index.html
-!New/app/css/
-!New/app/css/**
-!New/app/js/
-!New/app/js/**
+!/index.html
+!/css/
+!/css/**
+!/js/
+!/js/**
