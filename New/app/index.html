@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>After Code — The Enterprise in the Age of Autonomous Agents</title>
+  <meta name="description" content="A practitioner's view on AI, work, and the future of systems.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/diagrams.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/nav.css">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- Mermaid -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+
+<!-- ============================================================
+     PRESENTATION CONTAINER
+     ============================================================ -->
+<div id="presentation">
+
+  <!-- ════════════════════════════════════════════════════════════
+       SLIDE 01 — OPENING / TITLE
+       ════════════════════════════════════════════════════════════ -->
+  <section class="slide-section section--title" data-title="Opening">
+    <!-- Background decoration -->
+    <div class="bg-dots"></div>
+    <div class="bg-gradient-blob float-slow" style="width:600px;height:600px;top:-150px;left:-200px;background:radial-gradient(circle,var(--glow-cyan),transparent);"></div>
+    <div class="bg-gradient-blob float-medium" style="width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,var(--glow-magenta),transparent);"></div>
+
+    <div class="slide-content" style="text-align:center;">
+      <span class="slide-badge anim anim-fade-in">01 / 06</span>
+
+      <h1 class="anim anim-blur-in">
+        <span class="text-gradient">After Code</span>
+      </h1>
+
+      <p class="subtitle anim anim-fade-up" style="font-size:var(--fs-subtitle);color:var(--text-secondary);margin:var(--space-md) auto var(--space-lg);">
+        The Enterprise in the Age of Autonomous Agents
+      </p>
+
+      <h4 class="anim anim-fade-up" style="font-weight:var(--fw-regular);color:var(--text-muted);margin-bottom:var(--space-xl);">
+        A Practitioner's View on AI, Work &amp; the Future of Systems
+      </h4>
+
+      <div class="speaker-note anim anim-fade-up">
+        "Highly opinionated. From my own bubble. Make it interactive — challenge &amp; share your own."
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       SLIDE 02 — DETERMINISTIC MEETS PROBABILISTIC
+       ════════════════════════════════════════════════════════════ -->
+  <section class="slide-section" data-title="Deterministic ↔ Probabilistic" style="background:radial-gradient(ellipse at 30% 50%, rgba(255,193,7,0.04) 0%, transparent 50%);">
+    <div class="bg-dots"></div>
+
+    <div class="slide-content">
+      <span class="slide-badge anim anim-fade-in">02 / 06</span>
+      <h2 class="anim anim-fade-up" style="margin-bottom:var(--space-sm);">
+        When <span class="accent-gold">Deterministic Business</span> Meets <span class="accent-purple">Probabilistic AI</span>
+      </h2>
+      <p class="anim anim-fade-up" style="margin-bottom:var(--space-xl);">
+        AI doesn't fix broken organizations — it <strong class="accent-red">amplifies</strong> them. Before chasing AI value, diagnose your real constraints.
+      </p>
+
+      <!-- Two-column constraints -->
+      <div class="two-col anim-stagger anim" style="margin-bottom:var(--space-xl);">
+        <!-- Human-Level -->
+        <div class="comparison-card comparison-card--gold">
+          <h4 class="accent-gold" style="margin-bottom:var(--space-md);">🧠 Human-Level Constraints</h4>
+          <ol class="constraint-list">
+            <li><span class="code-pill" style="color:var(--accent-gold);border-color:var(--accent-gold);margin-right:6px;">Trust</span> Would your team see AI as a tool — or a <strong class="accent-red">threat</strong>?</li>
+            <li><span class="code-pill" style="color:var(--accent-gold);border-color:var(--accent-gold);margin-right:6px;">Skills</span> Can your average employee write an effective business prompt today?</li>
+            <li><span class="code-pill" style="color:var(--accent-gold);border-color:var(--accent-gold);margin-right:6px;">Politics</span> Would any manager <strong class="accent-red">block</strong> AI to protect their control?</li>
+            <li><span class="code-pill" style="color:var(--accent-gold);border-color:var(--accent-gold);margin-right:6px;">Accountability</span> When AI gets it wrong — clear path, or <strong class="accent-red">everyone freezes</strong>?</li>
+          </ol>
+        </div>
+        <!-- System-Level -->
+        <div class="comparison-card comparison-card--cyan">
+          <h4 class="accent-cyan" style="margin-bottom:var(--space-md);">⚙️ System-Level Constraints</h4>
+          <ol class="constraint-list" start="5">
+            <li><span class="code-pill" style="color:var(--accent-cyan);border-color:var(--accent-cyan);margin-right:6px;">Data</span> Can AI access your data <strong class="accent-red">without</strong> a manual spreadsheet export?</li>
+            <li><span class="code-pill" style="color:var(--accent-cyan);border-color:var(--accent-cyan);margin-right:6px;">Process</span> Automate your top workflow — <strong class="accent-green">good results faster</strong> or <strong class="accent-red">bad results faster</strong>?</li>
+            <li><span class="code-pill" style="color:var(--accent-cyan);border-color:var(--accent-cyan);margin-right:6px;">Compliance</span> Does legal know what AI agents are <strong class="accent-gold">allowed to do</strong>?</li>
+            <li><span class="code-pill" style="color:var(--accent-cyan);border-color:var(--accent-cyan);margin-right:6px;">Integration</span> How many systems need credentials before an agent is useful?</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Punchline -->
+      <blockquote class="anim anim-scale-in">
+        "You can't fix a broken house with a faster vacuum cleaner."
+      </blockquote>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       SLIDE 03 — STRATEGIC PILLARS
+       ════════════════════════════════════════════════════════════ -->
+  <section class="slide-section" data-title="Strategic Pillars" style="background:radial-gradient(ellipse at 60% 40%,rgba(0,212,255,0.04) 0%,transparent 50%);">
+    <div class="bg-dots"></div>
+
+    <div class="slide-content">
+      <span class="slide-badge anim anim-fade-in">03 / 06</span>
+      <h2 class="anim anim-fade-up" style="margin-bottom:var(--space-xs);">
+        Strategic Pillars for <span class="text-gradient">AI Adoption</span>
+      </h2>
+      <p class="anim anim-fade-up" style="margin-bottom:var(--space-xl);">
+        Four pillars, four different games — each with different scope, risk, and impact.
+      </p>
+
+      <!-- Pillar columns -->
+      <div class="pillars-grid anim-stagger anim" style="margin-bottom:var(--space-xl);">
+        <!-- Pillar 1 -->
+        <div class="pillar">
+          <div class="pillar__label accent-green">Pillar 1</div>
+          <div class="pillar__title">Productivity AI</div>
+          <div class="pillar__desc">Chat tools, MS Office AI, Copilots, productivity helpers</div>
+          <div style="margin-top:var(--space-md);">
+            <span class="code-pill">Quick Win</span>
+            <span class="code-pill" style="margin-left:4px;">Low Risk</span>
+          </div>
+          <p class="pillar__desc" style="margin-top:var(--space-sm);font-style:italic;">"We use AI"</p>
+        </div>
+        <!-- Pillar 2 -->
+        <div class="pillar">
+          <div class="pillar__label accent-cyan">Pillar 2</div>
+          <div class="pillar__title">Remodelling AI</div>
+          <div class="pillar__desc">Transform new/existing business processes</div>
+          <div style="margin-top:var(--space-md);">
+            <span class="code-pill">Medium Term</span>
+            <span class="code-pill" style="margin-left:4px;">Medium Risk</span>
+          </div>
+          <p class="pillar__desc" style="margin-top:var(--space-sm);font-style:italic;">"AI runs our ops"</p>
+        </div>
+        <!-- Pillar 3 -->
+        <div class="pillar">
+          <div class="pillar__label accent-magenta">Pillar 3</div>
+          <div class="pillar__title">Development AI</div>
+          <div class="pillar__desc">Remodel the SDLC and how software is built</div>
+          <div style="margin-top:var(--space-md);">
+            <span class="code-pill">Continuous</span>
+            <span class="code-pill" style="margin-left:4px;">Foundational</span>
+          </div>
+          <p class="pillar__desc" style="margin-top:var(--space-sm);font-style:italic;">"AI builds our AI"</p>
+        </div>
+        <!-- Pillar 4 -->
+        <div class="pillar">
+          <div class="pillar__label accent-gold">Pillar 4</div>
+          <div class="pillar__title">Big Ideas AI</div>
+          <div class="pillar__desc">Fundamentally change how the org operates in its industry</div>
+          <div style="margin-top:var(--space-md);">
+            <span class="code-pill">Long Term</span>
+            <span class="code-pill" style="margin-left:4px;">High Risk</span>
+          </div>
+          <p class="pillar__desc" style="margin-top:var(--space-sm);font-style:italic;">"AI IS our product"</p>
+        </div>
+      </div>
+
+      <!-- Key Insight -->
+      <div class="card anim anim-fly-left" style="border-left:4px solid var(--accent-magenta);max-width:600px;margin-right:auto;">
+        <h4 class="accent-magenta" style="margin-bottom:var(--space-sm);">Key Insight</h4>
+        <p style="font-size:var(--fs-body);color:var(--text-secondary);margin-bottom:0;">
+          Pillar 1 is table stakes. If your AI strategy stops at productivity tools, you're funding innovation for your competitors.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       SLIDE 04 — ACME CASE STUDY
+       ════════════════════════════════════════════════════════════ -->
+  <section class="slide-section" data-title="ACME Case Study" style="background:radial-gradient(ellipse at 70% 60%,rgba(0,230,118,0.04) 0%,transparent 50%);">
+    <div class="bg-dots"></div>
+
+    <div class="slide-content">
+      <span class="slide-badge anim anim-fade-in">04 / 06</span>
+      <h2 class="anim anim-fade-up" style="margin-bottom:var(--space-xs);">
+        From ChatGPT Clone to <span class="accent-green">Agent Platform</span>
+      </h2>
+      <p class="anim anim-fade-up" style="margin-bottom:var(--space-xl);">
+        Provide a no-code platform that empowers any Roche employee to build and deploy their own AI Agents.
+      </p>
+
+      <!-- Two initiatives -->
+      <div class="two-col" style="margin-bottom:var(--space-xl);">
+        <!-- Initiative 1 -->
+        <div class="comparison-card comparison-card--cyan anim anim-fly-left">
+          <h4 style="color:var(--accent-cyan);margin-bottom:var(--space-md);">2023 — ChatGPT Clone</h4>
+          <ul class="styled-list">
+            <li>Built on OutSystems</li>
+            <li><strong class="accent-cyan">80,000</strong> employees (3/4th of the company)</li>
+            <li><strong class="accent-cyan">12,000</strong> daily active users</li>
+          </ul>
+          <div style="margin-top:var(--space-lg);text-align:center;">
+            <span class="code-pill" style="border-color:var(--accent-green);">Pillar 1 — Productivity AI</span>
+          </div>
+        </div>
+        <!-- Initiative 2 -->
+        <div class="comparison-card comparison-card--magenta anim anim-fly-right">
+          <h4 style="color:var(--accent-magenta);margin-bottom:var(--space-md);">2025 — "Lumin" Agent Builder</h4>
+          <ul class="styled-list">
+            <li>Everyone in the company can build agents</li>
+            <li>Secure, governed environment</li>
+            <li><strong class="accent-magenta">1,300</strong> agents across <strong class="accent-magenta">20</strong> business units</li>
+          </ul>
+          <div style="margin-top:var(--space-lg);text-align:center;">
+            <span class="code-pill" style="border-color:var(--accent-magenta);">Pillar 2 — Remodelling AI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="card anim anim-scale-in" style="border-top:3px solid var(--accent-gold);text-align:center;padding:var(--space-xl);">
+        <h4 class="accent-gold" style="margin-bottom:var(--space-lg);">🏆 Spotlight: Campaign Genius Assistant</h4>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-num accent-cyan anim anim-counter" data-target="300" data-suffix="+">0</div>
+            <div class="stat-desc">Campaigns Supported</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num accent-gold anim anim-counter" data-target="15" data-suffix="M CHF">0</div>
+            <div class="stat-desc">Saved</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num accent-green anim anim-counter" data-target="25000" data-suffix=" hrs">0</div>
+            <div class="stat-desc">Human Labour Saved / Year</div>
+          </div>
+        </div>
+        <p style="margin-top:var(--space-lg);color:var(--text-muted);font-style:italic;font-size:var(--fs-small);">
+          → One agent. One business unit. This impact.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       SLIDE 05 — DEVELOPMENT AI
+       ════════════════════════════════════════════════════════════ -->
+  <section class="slide-section" data-title="Development AI" style="background:radial-gradient(ellipse at 40% 50%,rgba(255,61,142,0.04) 0%,transparent 50%);">
+    <div class="bg-dots"></div>
+
+    <div class="slide-content">
+      <span class="slide-badge anim anim-fade-in">05 / 06</span>
+      <h2 class="anim anim-fade-up" style="margin-bottom:var(--space-xs);">
+        Development AI — <span class="accent-magenta">How the SDLC Will Change</span>
+      </h2>
+      <p class="anim anim-fade-up" style="margin-bottom:var(--space-xl);">
+        The magic triangle of cost, time, and quality all improve when you reduce <strong class="accent-gold">human communication friction</strong>.
+      </p>
+
+      <div class="two-col" style="gap:var(--space-2xl);">
+        <!-- Left: Magic Triangle + Best Team -->
+        <div>
+          <!-- Magic Triangle SVG -->
+          <div class="magic-triangle anim anim-scale-in" style="margin-bottom:var(--space-xl);">
+            <svg viewBox="0 0 280 250">
+              <polygon class="tri-path" points="140,20 20,230 260,230" style="stroke:var(--accent-cyan);stroke-width:2;fill:rgba(0,212,255,0.05);"/>
+              <text class="tri-label" x="140" y="15" style="fill:var(--accent-cyan);">COST</text>
+              <text class="tri-label" x="15" y="248" style="fill:var(--accent-gold);text-anchor:start;">TIME</text>
+              <text class="tri-label" x="265" y="248" style="fill:var(--accent-green);text-anchor:end;">QUALITY</text>
+              <!-- Center label -->
+              <text x="140" y="145" style="fill:var(--accent-magenta);font-family:var(--font-mono);font-size:0.55rem;text-anchor:middle;font-weight:700;">REDUCE HUMAN</text>
+              <text x="140" y="160" style="fill:var(--accent-magenta);font-family:var(--font-mono);font-size:0.55rem;text-anchor:middle;font-weight:700;">COMMUNICATION</text>
+              <text x="140" y="175" style="fill:var(--accent-magenta);font-family:var(--font-mono);font-size:0.55rem;text-anchor:middle;font-weight:700;">FRICTION</text>
+              <!-- Strike-through X -->
+              <line x1="110" y1="138" x2="170" y2="178" style="stroke:var(--accent-red);stroke-width:2;opacity:0.6;"/>
+              <line x1="170" y1="138" x2="110" y2="178" style="stroke:var(--accent-red);stroke-width:2;opacity:0.6;"/>
+            </svg>
+          </div>
+
+          <!-- Best Team -->
+          <div class="card anim anim-fade-up" style="border-left:4px solid var(--accent-green);">
+            <h4 class="accent-green" style="margin-bottom:var(--space-sm);">My Best Team Ever: 3 People</h4>
+            <ul class="styled-list" style="margin-bottom:var(--space-sm);">
+              <li>Charismatic Business Analyst</li>
+              <li>A-class Developer</li>
+              <li>Well-connected IT Person</li>
+            </ul>
+            <p style="font-size:var(--fs-small);color:var(--accent-gold);font-weight:var(--fw-semibold);">
+              No scrum master. No designer. No architect committee.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: SDLC Mermaid + Before/After Comparison -->
+        <div>
+          <!-- Mermaid SDLC Diagram -->
+          <div class="diagram-container anim anim-scale-in" style="margin-bottom:var(--space-lg);">
+            <div class="mermaid">
+flowchart LR
+  A[Requirements] --> B[Design]
+  B --> C[Develop]
+  C --> D[Test]
+  D --> E[Deploy]
+  E --> F[Observe]
+  F --> A
+  style A fill:#1a2040,stroke:#00d4ff,color:#e8eaf0
+  style B fill:#1a2040,stroke:#b388ff,color:#e8eaf0
+  style C fill:#1a2040,stroke:#ff3d8e,color:#e8eaf0
+  style D fill:#1a2040,stroke:#ffc107,color:#e8eaf0
+  style E fill:#1a2040,stroke:#00e676,color:#e8eaf0
+  style F fill:#1a2040,stroke:#ff5252,color:#e8eaf0
+            </div>
+          </div>
+
+          <!-- Before / After Comparison -->
+          <div class="architecture-compare anim anim-fade-up">
+            <div class="arch-stack">
+              <div class="arch-layer" style="border-left:3px solid var(--accent-red);">
+                <strong class="accent-red">BEFORE</strong>
+              </div>
+              <div class="arch-layer">Dev: weeks</div>
+              <div class="arch-layer">Coordination: two-week sprints</div>
+              <div class="arch-layer">1 PM + 6–7 devs</div>
+              <div class="arch-layer">Long backlog grooming</div>
+            </div>
+            <div class="architecture-compare__arrow">→</div>
+            <div class="arch-stack">
+              <div class="arch-layer" style="border-left:3px solid var(--accent-green);">
+                <strong class="accent-green">NOW</strong>
+              </div>
+              <div class="arch-layer">Dev: <strong class="accent-cyan">hours</strong></div>
+              <div class="arch-layer">Coordination: unchanged 😩</div>
+              <div class="arch-layer">Meetings &gt; shipping</div>
+              <div class="arch-layer">Scrum loses purpose</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote banner -->
+      <blockquote class="anim anim-fly-left" style="margin-top:var(--space-2xl);">
+        "Coding agents won't save your IT organization. <br>
+        Your org structure will eat the productivity gains for breakfast."
+        <cite class="cite">— Fabian Wesner</cite>
+      </blockquote>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════════
+       SLIDE 06 — OUTSYSTEMS
+       ════════════════════════════════════════════════════════════ -->
+  <section class="slide-section" data-title="OutSystems" style="background:radial-gradient(ellipse at 50% 40%,rgba(179,136,255,0.05) 0%,transparent 50%);">
+    <div class="bg-dots"></div>
+
+    <div class="slide-content">
+      <span class="slide-badge anim anim-fade-in">06 / 06</span>
+      <h2 class="anim anim-fade-up" style="margin-bottom:var(--space-xs);">
+        OutSystems: The <span class="accent-purple">Governed AI</span> Development Platform
+      </h2>
+      <p class="anim anim-fade-up" style="margin-bottom:var(--space-xl);">
+        Where verification meets enterprise reality. Low-code doesn't just make development faster — it makes <strong class="accent-green">AI operationalization</strong> possible.
+      </p>
+
+      <div class="two-col" style="gap:var(--space-2xl);">
+        <!-- Left: Verification Spectrum -->
+        <div>
+          <h4 class="anim anim-fade-up accent-cyan" style="margin-bottom:var(--space-lg);">The Verification Spectrum</h4>
+
+          <!-- Funnel / Spectrum -->
+          <div class="anim anim-stagger" style="display:flex;flex-direction:column;gap:6px;margin-bottom:var(--space-xl);">
+            <div class="funnel__stage" style="width:100%;background:linear-gradient(90deg,rgba(255,82,82,0.25),rgba(255,82,82,0.08));color:var(--accent-red);text-align:left;padding:var(--space-md);">
+              <strong>Binary output</strong> — Can you verify? <strong>NO</strong> ✗
+            </div>
+            <div class="funnel__stage" style="width:85%;background:linear-gradient(90deg,rgba(255,193,7,0.2),rgba(255,193,7,0.06));color:var(--accent-gold);text-align:left;padding:var(--space-md);">
+              <strong>High-level code</strong> — Can you verify? <strong>WITH EFFORT</strong> ~
+            </div>
+            <div class="funnel__stage" style="width:70%;background:linear-gradient(90deg,rgba(0,230,118,0.25),rgba(0,230,118,0.06));color:var(--accent-green);text-align:left;padding:var(--space-md);border:1px solid var(--accent-green);border-radius:var(--radius-md);">
+              <strong>Low-code / visual</strong> — Can you verify? <strong>YES</strong> ✓
+              <span style="display:block;font-size:var(--fs-small);margin-top:4px;opacity:0.8;">Visualization = Validation</span>
+            </div>
+          </div>
+
+          <!-- Cost bar -->
+          <h4 class="anim anim-fade-up accent-red" style="margin-bottom:var(--space-sm);">TCO Reality</h4>
+          <div class="cost-bar anim anim-fade-up">
+            <div class="cost-bar__segment cost-bar__segment--dev">20–50% Dev</div>
+            <div class="cost-bar__segment cost-bar__segment--maint">50–80% Maintenance</div>
+          </div>
+          <p class="anim anim-fade-up" style="font-size:var(--fs-small);color:var(--text-muted);margin-top:var(--space-sm);">
+            AI without strategy accelerates initial dev but doesn't reduce maintenance.
+          </p>
+        </div>
+
+        <!-- Right: SDLC Table -->
+        <div>
+          <h4 class="anim anim-fade-up accent-purple" style="margin-bottom:var(--space-md);">One Platform, Full SDLC</h4>
+
+          <table class="styled-table anim anim-fade-up">
+            <thead>
+              <tr>
+                <th>SDLC Phase</th>
+                <th>What One Platform Enables</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong class="accent-cyan">Design</strong></td>
+                <td>Visual modeling — what the AI builds is what you see</td>
+              </tr>
+              <tr>
+                <td><strong class="accent-purple">Development</strong></td>
+                <td>Prebuilt connectors &amp; reusable components</td>
+              </tr>
+              <tr>
+                <td><strong class="accent-gold">Quality</strong></td>
+                <td>Architecture Dashboard checks security &amp; non-functionals automatically</td>
+              </tr>
+              <tr>
+                <td><strong class="accent-green">Governance</strong></td>
+                <td>Enterprise guardrails baked in: security, compliance, observability</td>
+              </tr>
+              <tr>
+                <td><strong class="accent-magenta">Maintenance</strong></td>
+                <td>Visual artifacts easier to review, extend, and hand off</td>
+              </tr>
+              <tr>
+                <td><strong class="accent-orange" style="color:var(--accent-orange);">Portfolio</strong></td>
+                <td>Governance standards harmonized across teams &amp; projects</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Closing insight -->
+          <blockquote class="anim anim-scale-in" style="margin-top:var(--space-lg);font-size:var(--fs-body);">
+            "Low-code doesn't just make development faster. It makes AI operationalization <strong>possible</strong>. Because you can see and verify what the AI builds."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- END #presentation -->
+
+<!-- Scripts (ES modules) -->
+<script type="module" src="js/main.js"></script>
+
+</body>
+</html>

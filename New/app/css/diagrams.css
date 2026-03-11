@@ -1,0 +1,351 @@
+/* ============================================
+   CUSTOM CSS DIAGRAMS
+   ============================================ */
+
+/* ── Evolution Staircase (Slide 01) ── */
+.staircase {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 280px;
+  padding: var(--space-md);
+}
+
+.staircase__step {
+  flex: 1;
+  background: linear-gradient(180deg, var(--accent-cyan), rgba(0, 212, 255, 0.2));
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-sm);
+  min-width: 0;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.staircase__step:nth-child(1) { height: 12%; }
+.staircase__step:nth-child(2) { height: 22%; }
+.staircase__step:nth-child(3) { height: 34%; }
+.staircase__step:nth-child(4) { height: 48%; }
+.staircase__step:nth-child(5) { height: 58%; }
+.staircase__step:nth-child(6) { height: 70%; }
+.staircase__step:nth-child(7) { height: 82%; }
+.staircase__step:nth-child(8) { height: 96%; }
+
+.staircase__label {
+  font-size: 0.6rem;
+  font-family: var(--font-mono);
+  color: var(--bg-primary);
+  font-weight: var(--fw-bold);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── S-Curve (Slide 06) ── */
+.s-curve-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  overflow: hidden;
+}
+
+.s-curve-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.s-curve-svg .curve-path {
+  fill: none;
+  stroke: var(--accent-cyan);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.s-curve-svg .phase-line {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+}
+
+.s-curve-svg .threshold-line {
+  stroke: var(--accent-gold);
+  stroke-width: 2;
+  stroke-dasharray: 8 4;
+}
+
+.s-curve-marker {
+  position: absolute;
+  background: var(--accent-magenta);
+  color: white;
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  font-weight: var(--fw-bold);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ── Three-Layer Stack (Slide 07) ── */
+.stack-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.stack-layer {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.stack-layer::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+}
+
+.stack-layer--ui::before { background: var(--accent-cyan); }
+.stack-layer--logic::before { background: var(--accent-gold); }
+.stack-layer--data::before { background: var(--accent-magenta); }
+
+.stack-layer__label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-xs);
+}
+
+.stack-layer--ui .stack-layer__label { color: var(--accent-cyan); }
+.stack-layer--logic .stack-layer__label { color: var(--accent-gold); }
+.stack-layer--data .stack-layer__label { color: var(--accent-magenta); }
+
+.stack-layer__desc {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}
+
+/* ── Magic Triangle (Slide 09) ── */
+.magic-triangle {
+  position: relative;
+  width: 280px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+.magic-triangle svg {
+  width: 100%;
+  height: 100%;
+}
+
+.magic-triangle .tri-path {
+  fill: none;
+  stroke: var(--accent-cyan);
+  stroke-width: 2;
+}
+
+.magic-triangle .tri-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  fill: var(--text-primary);
+  text-anchor: middle;
+}
+
+.magic-triangle .tri-center {
+  font-size: 0.65rem;
+  fill: var(--accent-magenta);
+  text-anchor: middle;
+  font-weight: var(--fw-semibold);
+}
+
+/* ── Cost Bar (Slide 04) ── */
+.cost-bar {
+  height: 40px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  margin: var(--space-md) 0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cost-bar__segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  transition: width 1.5s var(--ease-smooth);
+  white-space: nowrap;
+}
+
+.cost-bar__segment--dev {
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+  width: 25%;
+}
+
+.cost-bar__segment--maint {
+  background: var(--accent-red);
+  color: white;
+  width: 75%;
+}
+
+/* ── Compiler Pipeline (Slide 03) ── */
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pipeline__node {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+  min-width: 120px;
+}
+
+.pipeline__node-label {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+}
+
+.pipeline__node-sub {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.pipeline__arrow {
+  font-size: 1.2rem;
+  color: var(--accent-cyan);
+  padding: 0 var(--space-sm);
+  flex-shrink: 0;
+}
+
+/* ── Context Hub ── */
+.context-hub {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.context-hub__center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-gold), rgba(255, 193, 7, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-black);
+  font-size: 0.8rem;
+  color: var(--bg-primary);
+  z-index: 2;
+}
+
+.context-hub__node {
+  position: absolute;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 6px 12px;
+  font-size: 0.7rem;
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.context-hub__node:nth-child(2) { top: 5%; left: 50%; transform: translateX(-50%); }
+.context-hub__node:nth-child(3) { top: 25%; right: 0; }
+.context-hub__node:nth-child(4) { bottom: 25%; right: 0; }
+.context-hub__node:nth-child(5) { bottom: 5%; left: 50%; transform: translateX(-50%); }
+.context-hub__node:nth-child(6) { bottom: 25%; left: 0; }
+.context-hub__node:nth-child(7) { top: 25%; left: 0; }
+
+/* ── Four Pillars Visual ── */
+.pillar-bar {
+  border-radius: var(--radius-sm);
+  padding: var(--space-md);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* ── Before/After Architecture ── */
+.architecture-compare {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.architecture-compare__arrow {
+  font-size: 2rem;
+  color: var(--accent-cyan);
+}
+
+.arch-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.arch-layer {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+  font-size: var(--fs-small);
+}
+
+.arch-layer:first-child { border-radius: var(--radius-md) var(--radius-md) 0 0; }
+.arch-layer:last-child { border-radius: 0 0 var(--radius-md) var(--radius-md); }
+
+/* ── Funnel Diagram ── */
+.funnel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.funnel__stage {
+  text-align: center;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  border-radius: var(--radius-sm);
+  transition: width 1s var(--ease-smooth);
+}

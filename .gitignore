@@ -1,0 +1,15 @@
+# Ignore everything by default
+*
+
+# Keep directories visible so Git can traverse into allowed paths
+!*/
+
+# Keep this file
+!.gitignore
+
+# Only publish the new presentation app assets
+!New/app/index.html
+!New/app/css/
+!New/app/css/**
+!New/app/js/
+!New/app/js/**
